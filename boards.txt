@@ -25,6 +25,50 @@ menu.reset=Reset
 # Board definition is expected in
 # MyBoard.cpp and MyBoard.h as part
 # of the sketch
+
+###################################
+
+MyBoard_nRF52840.name=MyBoardNRF5 nRF52840
+
+MyBoard_nRF52840.bootloader.tool=sandeepmistry:openocd
+
+MyBoard_nRF52840.upload.tool=sandeepmistry:openocd
+MyBoard_nRF52840.upload.target=nrf52
+MyBoard_nRF52840.upload.maximum_size=1048576
+
+MyBoard_nRF52840.build.mcu=cortex-m4
+MyBoard_nRF52840.build.f_cpu=16000000
+MyBoard_nRF52840.build.board=GENERIC
+MyBoard_nRF52840.build.core=sandeepmistry:nRF5
+MyBoard_nRF52840.build.variant=MyBoardNRF5
+MyBoard_nRF52840.build.variant_system_lib=
+# -I{build.path} and -DMYBOARDNRF5 is only required by MyBoardNRF5
+MyBoard_nRF52840.build.extra_flags=-DNRF52 -DMYBOARDNRF5 -I{build.path}
+MyBoard_nRF52840.build.float_flags=-mfloat-abi=hard -mfpu=fpv4-sp-d16
+MyBoard_nRF52840.build.ldscript=nrf52_840.ld
+
+MyBoard_nRF52840.menu.bootcode.none=None
+MyBoard_nRF52840.menu.bootcode.none.softdevice=none
+MyBoard_nRF52840.menu.bootcode.s132=S132 (SoftDevice)
+MyBoard_nRF52840.menu.bootcode.s132.softdevice=s132
+MyBoard_nRF52840.menu.bootcode.s132.softdeviceversion=2.0.1
+MyBoard_nRF52840.menu.bootcode.s132.upload.maximum_size=409600
+MyBoard_nRF52840.menu.bootcode.s132.build.extra_flags=-DNRF52 -DS132 -DNRF51_S132 -DSOFTDEVICE_PRESENT
+MyBoard_nRF52840.menu.bootcode.s132.build.ldscript=armgcc_s132_nrf52832_xxaa.ld
+
+MyBoard_nRF52840.menu.lfclk.lfxo=Crystal Oscillator
+MyBoard_nRF52840.menu.lfclk.lfxo.build.lfclk_flags=-DUSE_LFXO
+MyBoard_nRF52840.menu.lfclk.lfrc=RC Oscillator
+MyBoard_nRF52840.menu.lfclk.lfrc.build.lfclk_flags=-DUSE_LFRC
+MyBoard_nRF52840.menu.lfclk.lfsynt=Synthesized
+MyBoard_nRF52840.menu.lfclk.lfsynt.build.lfclk_flags=-DUSE_LFSYNT
+
+MyBoard_nRF52840.menu.reset.notenable=Don't enable
+MyBoard_nRF52840.menu.reset.notenable.build.reset_flags=
+MyBoard_nRF52840.menu.reset.enabled=Enable
+MyBoard_nRF52840.menu.reset.enabled.build.reset_flags=-DCONFIG_GPIO_AS_PINRESET
+
+
 ###################################
 
 MyBoard_nRF52832.name=MyBoardNRF5 nRF52832
