@@ -37,7 +37,7 @@ MyBoard_nRF52840.upload.target=nrf52
 MyBoard_nRF52840.upload.maximum_size=1048576
 
 MyBoard_nRF52840.build.mcu=cortex-m4
-MyBoard_nRF52840.build.f_cpu=16000000
+MyBoard_nRF52840.build.f_cpu=64000000
 MyBoard_nRF52840.build.board=GENERIC
 MyBoard_nRF52840.build.core=sandeepmistry:nRF5
 MyBoard_nRF52840.build.variant=MyBoardNRF5
@@ -80,7 +80,7 @@ MyBoard_nRF52832.upload.target=nrf52
 MyBoard_nRF52832.upload.maximum_size=524288
 
 MyBoard_nRF52832.build.mcu=cortex-m4
-MyBoard_nRF52832.build.f_cpu=16000000
+MyBoard_nRF52832.build.f_cpu=64000000
 MyBoard_nRF52832.build.board=GENERIC
 MyBoard_nRF52832.build.core=sandeepmistry:nRF5
 MyBoard_nRF52832.build.variant=MyBoardNRF5
