@@ -39,7 +39,7 @@ def parseWarnings(String key) {
 }
 
 def buildnRF52832(config, sketches, String key) {
-	def fqbn = '-fqbn=MySensors:nRF5:MyBoard_nRF52832:bootcode=none,lfclk=lfxo,reset=notenable -prefs build.f_cpu=16000000 -prefs build.mcu=cortex-m4'
+	def fqbn = '-fqbn=MySensors:nRF5:MyBoard_nRF52832:bootcode=none,lfclk=lfxo,reset=notenable -prefs build.f_cpu=64000000 -prefs build.mcu=cortex-m4'
 	config.pr.setBuildStatus(config, 'PENDING', 'Toll gate (nRF52832 - '+key+')', 'Building...', '${BUILD_URL}flowGraphTable/')
 	try {
 		buildArduino(config, fqbn, config.repository_root+'libraries/MyBoardNRF5/examples/MyBoardNRF5/MyBoardNRF5.ino', key+'_nRF52832')
